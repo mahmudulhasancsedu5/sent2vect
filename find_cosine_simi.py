@@ -1,10 +1,10 @@
 """
-reade  vectore file and find cosine similarity
+-------reade  vectore file and find cosine similarity-------
 
 
 """
 file=open('news1.txt.vec','r')
-file1=open('news1_sentence_cosine_value.txt','w')
+outputFile=open('news1_sentence_cosine_value.txt','w')
 
 #lines_list=file_id.readlines()
 #print lines_list
@@ -77,12 +77,18 @@ for u in mat:
         #print "cosine(u,v) = "+str(cosine_val)+"\n"
         j+=1
     
-    print "sent_"+str(i)+" total cosine value = "+str(sent_u_val/len(mat))
+    print "sent_"+str(i)+" total cosine value = "+str(sent_u_val)
+
+    out_str=str("sent_"+str(i)+" "+str(sent_u_val))
     sent_cosine_val_array.append(sent_u_val/len(mat))
+    outputFile.write(out_str+'\n')
     i+=1
     
     
 print "len-----> "+str(len(sent_cosine_val_array))
+
+file.close()
+outputFile.close()
 """
 for line in line_list:
 
